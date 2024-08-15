@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import Tilt from 'react-parallax-tilt';
 import Product from './UI/ProductCards/ProductCards';
-import styles from './UI/ProductCards/ProductCards.module.css';
 import AddButton from './UI/Buttons/AddButton';
+import './Menus.css';
 
 interface ProductList {
     productName: string;
@@ -43,24 +44,34 @@ const Menus: React.FC = () => {
     };
 
     return (
-        <div className={styles['slideshow-container']}>
-            <div className={styles['product-slide']}>
-                <Product key={currentIndex}>
-                    <h2>{products[currentIndex].productName}</h2>
-                    <img src={products[currentIndex].productImage} alt={products[currentIndex].productName} />
-                    <p>Price: ${products[currentIndex].price.toFixed(2)}</p>
-                    <AddButton children='Add' />
-                </Product>
+        <div className="slideshow-container">
+            <div className="product-slide">
+                <Tilt
+                    tiltMaxAngleX={25}
+                    tiltMaxAngleY={25}
+                    perspective={1000}
+                    scale={1.05}
+                    transitionSpeed={1000}
+                    gyroscope={true}
+                    className="Tilt-inner"
+                >
+                    <Product key={currentIndex}>
+                        <h2>{products[currentIndex].productName}</h2>
+                        <img src={products[currentIndex].productImage} alt={products[currentIndex].productName} />
+                        <p>Price: ${products[currentIndex].price.toFixed(2)}</p>
+                        <AddButton>Add</AddButton>
+                    </Product>
+                </Tilt>
             </div>
 
-            <button className={styles['prev']} onClick={prevSlide}>&#10094;</button>
-            <button className={styles['next']} onClick={nextSlide}>&#10095;</button>
+            <button className="prev" onClick={prevSlide}>&#10094;</button>
+            <button className="next" onClick={nextSlide}>&#10095;</button>
 
-            <div className={styles['dots']}>
+            <div className="dots">
                 {products.map((_, index) => (
                     <span
                         key={index}
-                        className={`${styles['dot']} ${currentIndex === index ? styles['active'] : ''}`}
+                        className={`dot ${currentIndex === index ? 'active' : ''}`}
                         onClick={() => setCurrentIndex(index)}
                     ></span>
                 ))}
