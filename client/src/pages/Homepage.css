@@ -1,0 +1,8 @@
+.homepage-cont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 600px;
+    margin-left: 150px;
+}

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Menu from "../components/Menu";
+import Header from "../components/Header";
+import './Homepage.css';
+import Sidebar from "../components/Sidebar";
 
 const Homepage = () => {
   const milkshake1 = require("../assets/images/milkshake_1.png");
@@ -45,28 +48,11 @@ const Homepage = () => {
       price: 11,
       image: milkshake4,
     },
-    {
-      id: 5,
-      name: "Berry Breeze",
-      flavor: "Mixed Berries",
-      calories: 150,
-      price: 13,
-      image: milkshake5,
-    },
-    {
-      id: 6,
-      name: "Coconut Crush",
-      flavor: "Coconut",
-      calories: 170,
-      price: 14,
-      image: milkshake6,
-    },
   ];
 
   return (
-    <div>
-   
-
+    <div className="homepage-cont">
+      <Sidebar />
       <Menu drinks={milkshakes} />
     </div>
   );

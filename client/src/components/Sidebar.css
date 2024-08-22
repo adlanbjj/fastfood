@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.sidebar-cont {
+    position: fixed;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 10px 0 rgb(231, 231, 231);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 15%;
+    height: 100%;
+    bottom: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+.second-block {
+    margin-top: 30px;
+    text-align: start;
+}
+
+.sidebar-cont h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 40px;
+    cursor: pointer;
+    color: rgb(142, 142, 142);
+}
+
+.sidebar-cont h4:hover {
+    color: rgb(59, 59, 59);
+}
+
+h2 {
+    font-weight: 500;
+    border-bottom: 5px solid;
+    font-size: 23px;
+}
+
+#nos-deserts {
+    color: black;
+    font-weight: 500;
+}
